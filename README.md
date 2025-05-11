@@ -1,54 +1,32 @@
-# React + TypeScript + Vite
+# Cron Expression Visualizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visual tool to help developers understand cron expressions and recurrence patterns better. This tool allows you to enter a cron expression and see which components (hours, days, months) are being set. You can also choose recurrence patterns using a form and see a human-readable description generated based on your selections.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Cron Expression Visualizer**: Enter a cron expression and see it parsed into its six components (Seconds, Minutes, Hours, Days, Month, Day of Week)
+- **Active Field Highlighting**: Fields with explicitly set values are marked as active
+- **Recurrence Pattern Generator**: Choose from Daily, Weekly, or Monthly patterns and see a human-readable description
+- **Dynamic Form Fields**: Input fields change based on the selected recurrence pattern
+- **Real-time Updates**: Both visualizer and description update as you make changes
 
-## Expanding the ESLint configuration
+## How to Use
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Cron Expression Visualizer**: 
+   - Enter a valid cron expression (e.g., "0 15 12 1 JAN MON")
+   - See the parsed components immediately
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+2. **Recurrence Pattern Generator**:
+   - Select a pattern type (Daily, Weekly, Monthly)
+   - Fill in the relevant fields that appear
+   - Read the automatically generated description
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technologies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React with TypeScript
+- Modern UI components
+- Real-time validation and parsing
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Live Demo
+
+Try it out live at: [https://cron-tsx.vercel.app/](https://cron-tsx.vercel.app/)
